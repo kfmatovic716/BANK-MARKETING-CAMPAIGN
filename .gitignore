@@ -6,6 +6,15 @@ __pycache__/
 # C extensions
 *.so
 
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code or LSP virtual documents
+.virtual_documents/
+
+# macOS metadata file
+.DS_Store
+
 # Distribution / packaging
 .Python
 build/
