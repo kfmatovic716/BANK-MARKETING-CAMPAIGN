@@ -214,3 +214,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+#ignore checkpoints & Mac User auto-generated file (Desktop Service Store)
+.DS_Store
+.virtual_documents
