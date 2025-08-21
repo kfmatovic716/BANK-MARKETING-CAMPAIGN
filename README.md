@@ -1,5 +1,5 @@
 ## Practical Application of Machine Learning Algorithms - Classification Task
-<a href="https://github.com/kfmatovic716/BANK-MARKETING-CAMPAIGN.git"><h2>PORTUGUESE BANK MARKETING CHURN</h2></a>
+<h2><a href="https://github.com/kfmatovic716/BANK-MARKETING-CAMPAIGN.git">PORTUGUESE BANK MARKETING CHURN</h2></a></h2>
 
 <img src="/images/bank.png"/>
 
@@ -44,8 +44,19 @@
     <img src="/images/campaign.png"/>
 </ul>
 
-## MODELING 
+## FEATURE ENGINEERING
+<ul>
+    <li>Utilized LabelEncoder to transform the binary columns into numerical data</li>
+    <li>Utilized OneHotEncoder to transform the categorical variables to numerical data</li>
+    <li>Split the data and use StandardScale to scale the data</li>
+</ul>
 
+## MODELING 
+<ul>
+    <li>Baseline Model: Logistic Regression</li>
+    <li>Decision Tree Model</li>
+    <li>Support Vector Machine</li>
+</ul>
 
 ## COMPARISON OF CLASSIFICATION ALGORITHMS
 
