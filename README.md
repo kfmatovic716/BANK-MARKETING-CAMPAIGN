@@ -51,19 +51,50 @@
     <li>Split the data and use StandardScale to scale the data</li>
 </ul>
 
-## MODELING 
+## SUMMARY OF MODEL EVALUATION
+
+
+## MODELING RESULTS & EVALUATION
 <ul>
-    <li>Baseline Model: Logistic Regression</li>
-    <li>Decision Tree Model</li>
-    <li>Support Vector Machine</li>
+    <li><strong>Baseline Model: Logistic Regression</strong></li>
+        <ul>
+            <li>Training and test accuracy are approximately 80%, which means that the model does not overfit and gneneralize to new data well.</li>
+            <li>Based on the confusion matrix, the model caught many subscribers (true positives - 699) but missed some subscribers where model predicted a "no" but actually a "yes" (false negatives- 299). It also correctly predicted non-subscribers (true negatives - 5924) and predicted “yes” but actually “no” (false positive - 1384) </li>
+            <li>With AUC = 0.87, the model is good at ranking positives higher than negatives</li>
+            <li>With a recall of 0.75, the model is great at identifying subscribers, which is very important for marketing purposes. However, precision of 0.34 is low, where a large portion of predicted “yes” are actually “no”, which also means many unnecessary calls.</li>
+             <li>It provides a balanced baseline that captured most of potential subscribers but also at the cost of contacting uninterested clients. If precision is crucial to business, which is reducing wasted effort, then threshold should be adjusted or explore a different model would be the next step.</li>
+        </ul>
+    <li><strong>K Nearest Neighbors</strong></li>
+        <ul>
+            <li>On the default n_neighbors=5 (without weights=balance), the model has good training performance (~87%) but test performace is low (~79%), a noticeable gap which suggests some overfitting. The model memorized the training data but generalizes less on new data. </li>
+            <li>Speed of training is fast but not the best choice for high-dimensional, imbalanced data</li>
+            <li>For heavily imbalanced data, applied SMOTE along with weighting strategies to improve minority-class recall. Using distance-based weights gave more power to closer neighbors compared to farther ones. However, after applying weights, the model achieved ~100% training accuracy but only about ~80% test accuracy, indicating that the model is overfitting. When tuning the number of neighbors to 20, training accuracy again was at ~100%, while test accuracy dropped further to around 79%, reinforcing the overfitting issue. Clearly, this model is not the best for this dataset. </li>
+    <li><strong>Decision Tree Model</strong></li>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    <li><strong>Support Vector Machine</strong></li>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
 </ul>
 
-## COMPARISON OF CLASSIFICATION ALGORITHMS
 
-
-## EVALUATION
 
 ## RECOMMENDATIONS TO CLIENT
-
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 
 ## FUTURE RECOMMENDATIONS REGARDING DATA QUALITY
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
