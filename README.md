@@ -74,13 +74,14 @@
             <li>The training accuracy was ~100%, which indicated strong overfitting. The test accuracy was ~84%, way lower than the training accuracy. This means that the model does not generalize well with new data.</li>
             <li>Decision trees tend to create deep trees and memorize the training data, when not pruned, which explains the 100% training accuracy.</li>
             <li>Applied the class weight=balance and SMOTE to pay more attention to the minority class (subscription = yes)</li>
-            <li>Applied hyperparameter tuning to improve model performance. The best parameter setting was ccp_alpha = 0.001, which introduced light pruning to prevent overfitting and remove weak branches. As a result, the pruned tree generalized much better than the unpruned version..</li>
+            <li>Applied hyperparameter tuning to improve model performance. The best parameter setting was ccp_alpha = 0.001, which introduced light pruning to prevent overfitting and remove weak branches. As a result, the pruned tree generalized much better than the unpruned version.</li>
             <li>It handles the majority class well but less with the minority class. It recovers more clients who agree to subscribe than before (recall=~54) at the cost of precision</li>
+            <li>Overall accuracy is strong but majority class dominates. The model also has a good capability in ranking positives over negative (AOC ROC = ~84%)</li>
         </ul>
     <li><strong>Support Vector Machine</strong></li>
         <ul>
-            <li></li>
-            <li></li>
+            <li>The training and test accuracy (~78%) are very close which means that there's no significant overfitting and the model generalizes well.</li>
+            <li>With a recall of 81%, the model is great at finding actual subscribers, however at the cost of precision, which is low at ~32%.</li>
             <li></li>
         </ul>
 </ul>
