@@ -71,9 +71,11 @@
             <li>For heavily imbalanced data, applied SMOTE along with weighting strategies to improve minority-class recall. Using distance-based weights gave more power to closer neighbors compared to farther ones. However, after applying weights, the model achieved ~100% training accuracy but only about ~80% test accuracy, indicating that the model is overfitting. When tuning the number of neighbors to 20, training accuracy again was at ~100%, while test accuracy dropped further to around 79%, reinforcing the overfitting issue. Clearly, this model is not the best for this dataset. </li>
     <li><strong>Decision Tree Model</strong></li>
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The training accuracy was ~100%, which indicated strong overfitting. The test accuracy was ~84%, way lower than the training accuracy. This means that the model does not generalize well with new data.</li>
+            <li>Decision trees tend to create deep trees and memorize the training data, when not pruned, which explains the 100% training accuracy.</li>
+            <li>Applied the class weight=balance and SMOTE to pay more attention to the minority class (subscription = yes)</li>
+            <li>Applied hyperparameter tuning to improve model performance. The best parameter setting was ccp_alpha = 0.001, which introduced light pruning to prevent overfitting and remove weak branches. As a result, the pruned tree generalized much better than the unpruned version..</li>
+            <li>It handles the majority class well but less with the minority class. It recovers more clients who agree to subscribe than before (recall=~54) at the cost of precision</li>
         </ul>
     <li><strong>Support Vector Machine</strong></li>
         <ul>
@@ -82,7 +84,6 @@
             <li></li>
         </ul>
 </ul>
-
 
 
 ## RECOMMENDATIONS TO CLIENT
