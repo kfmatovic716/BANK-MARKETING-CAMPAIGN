@@ -80,23 +80,21 @@
         </ul>
     <li><strong>Support Vector Machine</strong></li>
         <ul>
-            <li>The training and test accuracy (~78%) are very close which means that there's no significant overfitting and the model generalizes well.</li>
-            <li>With a recall of 81%, the model is great at finding actual subscribers, however at the cost of precision, which is low at ~32%.</li>
+            <li>The training and test accuracy (~78%) are very close which means that there's no significant overfitting and the model generalizes well.However, accuracy is lower than Logistic regression and Decision Tree (~. Accuracy can potentially be misleading due to the imbalanced data.</li>
+            <li>With a recall of 81%, the model is great at finding actual subscribers, however at the cost of precision, which is low at ~32%. There were customers who were flagged as potential subscribers.</li>
             <li></li>
+            <li>Performance can certainly be improved through hyperparameter tuning (particularly of C and gamma) and by adjusting the decision threshold to balance precision and recall. However, on large and high-dimensional datasets like this, SVM with an RBF kernel is computationally expensive and less practical since training requires significant time and resources compared to alternative models. </li>
         </ul>
 </ul>
 
+## MODEL COMPARISON SUMMARY AND BEST MODEL
+ <img src="/images/summary_model.png"/>
 
-## RECOMMENDATIONS TO CLIENT
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+<p>Based on the results of the classification algorithms above, the Decision Tree model achieved the highest test accuracy (83.62%), but a strong overfitting is indicated by its nearly perfect training accuracy (99.96%). While it performs well on this dataset, its ability to generalize new or noisy data degraded unless techniques like pruning is used. In contrast, Logistic Regression resulted a slightly lower accuracy (80.42%), but its train and test scores are closely aligned, which showed good generalization and lower risk of overfitting. Interpretability and robustness on unseen data are crucial factors in considering the best model. Therefore, Logistic Regression is a more stable and reliable choice in practice. It is recommended in practice for consistent, generalizable performance.</p>
 
 ## FUTURE RECOMMENDATIONS REGARDING DATA QUALITY
 <ul>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li>In solving classification problems, it is important to have a balaced dataset to build a reliable model. Algorithms can learn to recognize patterns in both groups equally, leading to more accurate predictions and reducing bias towards the majority class. The target variable ("subscription) is severely imbalanced in this dataset, with more "no" responses than "yes", which makes it harder for the model to correctly identify the minority class, often resulting in high overall accuracy but poor performance in detecting the minority outcome. One of the key improvements should be ensuring a more balanced dataset for future data quality considerations. This could be collecting more positive samples (the minority class). A dataset that is not severly imbalances will help the model generalize more effectively, improve fairness, and provide more meaningful insights from the predictions.</li>
+    <li>Removing the “unknown” categories from variables such as job, marital status, and education can simplify feature engineering and improve model performance. By addressing these ambiguous entries in future dataset, noise is reduced in the data, features are more meaningful and the model learns clearer, more accurate patterns./li>
+    <li>Identifying and removing duplicate entries should be considered in future data reporting. Duplicates can artificially inflate the sample size, introduce bias, and distort the distribution of the data. They may cause models to overfit by repeatedly learning from the same records, which reduces generalizability to unseen data. Eliminating duplicate records in the dataset not only saves time and resources during preprocessing but also improves the reliability, efficiency, and fairness of the entire modeling pipeline.</li>
 </ul>
